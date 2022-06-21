@@ -130,5 +130,5 @@ after_bundle do
   ########################################
   git :init
   git add: "."
-  git commit: "-m 'Initial commit with devise"
+  git commit: "-m 'Initial commit with devise'"
 end
