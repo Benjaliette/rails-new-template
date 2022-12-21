@@ -19,7 +19,6 @@ RUBY
 end
 
 gsub_file("Gemfile", '# gem "sassc-rails"', 'gem "sassc-rails"')
-gsub_file("config/application.rb", 'generate.test_framework :test_unit, fixture: false', 'generate.test_framework :rspec, fixture: false"')
 
 # Layout
 ########################################
@@ -36,7 +35,7 @@ generators = <<~RUBY
   config.generators do |generate|
     generate.assets true
     generate.helper true
-    generate.test_framework :test_unit, fixture: false
+    generate.test_framework :rspec, fixture: false
   end
 RUBY
 
