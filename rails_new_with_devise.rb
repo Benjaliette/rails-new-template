@@ -14,10 +14,12 @@ end
 inject_into_file "Gemfile", before: 'gem "debug", platforms: %i[ mri mingw x64_mingw ]' do
 <<-RUBY
   gem "dotenv-rails"
+  gem 'rspec-rails', '~> 6.0.0'
 RUBY
 end
 
 gsub_file("Gemfile", '# gem "sassc-rails"', 'gem "sassc-rails"')
+gsub_file("config/application.rb", 'generate.test_framework :test_unit, fixture: false', 'generate.test_framework :rspec, fixture: false"')
 
 # Layout
 ########################################
